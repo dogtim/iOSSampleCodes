@@ -27,7 +27,7 @@
 
 #pragma mark - UITableViewDataSource
 
-- (UITableViewCell *)   tableView:(UITableView *)tableView
+- (UITableViewCell *) tableView:(UITableView *)tableView
             cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TableCell"];
@@ -37,6 +37,26 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 3;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSURL *myURL;
+    NSString *testing;
+    switch (indexPath.section) {
+        case 0:
+            myURL = [NSURL URLWithString:testing];
+            [[UIApplication sharedApplication] openURL:myURL];
+            
+            break;
+        case 1:
+            break;
+        case 2:
+            break;
+        default:
+            break;
+    }
 }
 @end
